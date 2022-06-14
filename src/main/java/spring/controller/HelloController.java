@@ -20,6 +20,7 @@ public class HelloController extends AbstractController {
 		Map<String, String> errors = new HashMap<String, String>();
 		request.setAttribute("errors", errors);
 		
+		
 		if (userName==null || userName.length()==0) {
 			errors.put("name", "name is require");
 		}
