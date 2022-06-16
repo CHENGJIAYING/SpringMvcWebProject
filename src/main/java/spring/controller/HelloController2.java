@@ -15,6 +15,12 @@ import org.springframework.web.bind.support.SessionStatus;
 @Controller
 @SessionAttributes(names = {"userName"})
 public class HelloController2 {
+	
+	@RequestMapping(path = "/hello2main.controller",method = RequestMethod.GET)
+	public String processMainAction() {
+		return "form";
+	}
+	
 	@RequestMapping(path = "/hello2.controller",method = RequestMethod.GET)
 	public String processAction(@RequestParam("userName") String userName,Model m, SessionStatus status) {
 		//String userName = request.getParameter("userName");
@@ -26,7 +32,7 @@ public class HelloController2 {
 		}
 		if(errors!=null && !errors.isEmpty()) {
 			//return new ModelAndView("/form.jsp");
-			return "/form.jsp";
+			return "form";
 		}	
 		//HttpSession session = request.getSession();
 		//session.setAttribute("userName", userName);
@@ -34,7 +40,7 @@ public class HelloController2 {
 		
 		status.setComplete();
 		//return new ModelAndView("/success.jsp");
-		return "/success.jsp";
+		return "success";
 	}
 	@RequestMapping(path = "/hello2.controller",method = RequestMethod.POST)
 	public String processAction2(@RequestParam("userName") String userName,Model m, SessionStatus status) {
@@ -47,7 +53,7 @@ public class HelloController2 {
 		}
 		if(errors!=null && !errors.isEmpty()) {
 			//return new ModelAndView("/form.jsp");
-			return "/form.jsp";
+			return "form";
 		}	
 		//HttpSession session = request.getSession();
 		//session.setAttribute("userName", userName);
@@ -55,7 +61,7 @@ public class HelloController2 {
 		
 		status.setComplete();
 		//return new ModelAndView("/success.jsp");
-		return "/success.jsp";
+		return "success";
 	}
 	
 }

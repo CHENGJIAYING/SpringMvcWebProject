@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2>Form</h2>
-	<form action="hello2.controller" method="post">
+	<form action="hello2.controller" method="get">
 		<table>
 			<tr>
 				<td>Name:</td>

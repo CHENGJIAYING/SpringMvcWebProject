@@ -11,7 +11,11 @@
 	<context:component-scan base-package="spring"/>
 	<mvc:annotation-driven />
 	
-	<bean id="helloController" name="/hello.controller" class="spring.controller.HelloController"/>
+	<bean id="irViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+       <property name="prefix" value="/WEB-INF/pages/"/>
+       <property name="suffix" value=".jsp"/>
+    </bean>
+    
 
 
 </beans>

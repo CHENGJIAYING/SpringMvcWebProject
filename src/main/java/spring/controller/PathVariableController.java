@@ -12,7 +12,7 @@ public class PathVariableController {
 	@RequestMapping(path = "/members/{mid}" , method = RequestMethod.GET)
 	public String processAction(@PathVariable("mid") String memberId, Model model) {
 		model.addAttribute("id", memberId);
-		return "/pathVariableResult.jsp";
+		return "pathVariableResult";
 	}
 
 }
