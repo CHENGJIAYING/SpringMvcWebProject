@@ -26,6 +26,7 @@
 			</bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
+	
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
 
