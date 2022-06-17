@@ -8,14 +8,21 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<context:annotation-config />
-	<context:component-scan base-package="spring"/>
+	<context:component-scan base-package="spring" />
 	<mvc:annotation-driven />
-	
-	<bean id="irViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-       <property name="prefix" value="/WEB-INF/pages/"/>
-       <property name="suffix" value=".jsp"/>
-    </bean>
-    
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="i18n.message" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<bean id="irViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
 
 
 </beans>

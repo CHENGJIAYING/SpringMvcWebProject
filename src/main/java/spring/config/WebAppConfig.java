@@ -9,9 +9,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 //相當於MVC-servlet.xml的java程式組態
-@Configuration
-@ComponentScan(basePackages = {"spring"})
-@EnableWebMvc
+//@Configuration
+//@ComponentScan(basePackages = {"spring"})
+//@EnableWebMvc
 public class WebAppConfig implements WebMvcConfigurer {
 
 	@Override
