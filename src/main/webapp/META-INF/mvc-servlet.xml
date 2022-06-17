@@ -10,22 +10,28 @@
 	<context:annotation-config />
 	<context:component-scan base-package="spring" />
 	<mvc:annotation-driven />
+	<mvc:default-servlet-handler/>
+	
+	 <mvc:resources location="/WEB-INF/resources/images/" mapping="/images/**"/>
+	 <mvc:resources location="/WEB-INF/resources/css/" mapping="/css/**"/>
 
-	<bean id="messageSource"
-		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="i18n.message" />
-		<property name="defaultEncoding" value="UTF-8" />
-	</bean>
+	<mvc:view-controller path="/" view-name="redirect:membersmain.controller"/>
+	<mvc:view-controller path="/funny.sweet" view-name="form"/>
+	<mvc:view-controller path="/showresources.info" view-name="showResources"/>
+
+	 <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+       <property name="basename" value="i18n.message"/>
+       <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
 
 	<mvc:interceptors>
-		<mvc:interceptor>
-			<mvc:mapping path="/**" />
-			<bean
-				class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-				<property name="paramName" value="locale" />
-			</bean>
-		</mvc:interceptor>
-	</mvc:interceptors>
+       <mvc:interceptor>
+         <mvc:mapping path="/**"/>
+         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="locale"/>
+         </bean>
+       </mvc:interceptor>
+    </mvc:interceptors>
 	
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
